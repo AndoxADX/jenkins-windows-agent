@@ -1,0 +1,9 @@
+<service>
+  <id>jenkins8080agent</id>
+  <name>Jenkins Agent for jenkins:8080</name>
+  <description>This service runs the agent process connected to jenkins:8080</description>
+  <executable>C:\agents\jdk-11.0.2\bin\java.exe</executable>
+  <arguments> -jar agent.jar -jnlpUrl https://jenkins-ecs.gaeldevelopment.com/computer/bastion/jenkins-agent.jnlp -secret 553d0011034fecf99cef6e79db594720b4f86ddb632da37264e61149969326d6  -workDir "C:\agents"</arguments>
+  <log mode="roll" />
+  <onfailure action="restart" />
+</service>

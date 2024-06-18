@@ -1,0 +1,16 @@
+name: Test
+
+on:
+  push:
+    branches: main
+  workflow_dispatch:
+
+jobs: 
+  test:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: install and start jenkins agent
+      run: 
+        ./main.bat agent
